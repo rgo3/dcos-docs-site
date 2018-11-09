@@ -79,7 +79,7 @@ User-created Marathon services and pods support both zone and region awareness. 
 
 ## Marathon services and pods
 
-In your Marathon service or pod definition, you can use [placement constraints](/1.11/deploying-services/marathon-constraints/) to:
+In your Marathon service or pod definition, you can use [placement constraints](/1.12/deploying-services/marathon-constraints/) to:
 
 - Specify a region and zone for your service or pod, so that all instances will be scheduled only in that region and zone.
 
@@ -113,7 +113,7 @@ Suppose you have a Mesos cluster that spans 3 regions: `aws-us-east1`, `aws-us-e
 - No instance will launch in the local region.
 - All of the 5 instances will be launched in the `aws-us-east1` region.
 
-### Balanced Placement for a Single Region
+### Balanced placement for a single region
 
 ```json
 {

@@ -10,7 +10,7 @@ enterprise: true
 <!-- The source repository for this topic is https://github.com/dcos/dcos-docs-site -->
 
 
-本页面讨论了 OpenID Idp 的一般要求，并提供了设置 OneLogin IdP 的分步程序。DC/OS Enterprise 可与使用 OpenID Connect 1.0 的任何身份提供程序 (Idp) 集成。以下程序将采用 Google IdP 作为示例，并引导您完成设置流程的每个步骤。
+本页面讨论了 OpenID Idp 的一般要求，并提供了设置 OneLogin IdP 的分步步骤。DC/OS Enterprise 可与使用 OpenID Connect 1.0 的任何身份提供程序 (Idp) 集成。以下步骤将采用 Google IdP 作为示例，并引导您完成设置流程的每个步骤。
 
 # 添加 OpenID Connect 身份提供程序：
 
@@ -36,13 +36,13 @@ enterprise: true
 
 1. 在 **Name** 框中键入 IdP 的名称。
 
-1. 将群集的 URL 粘贴到 **Authorized Javascript origins**框中。示例：`https://jp-ybwutd-elasticl-1r2iui8i0z9b7-1590150926.us-west-2.elb.amazonaws.com`
+1. 将集群的 URL 粘贴到 **Authorized Javascript origins**框中。示例：`https://jp-ybwutd-elasticl-1r2iui8i0z9b7-1590150926.us-west-2.elb.amazonaws.com`
 
- 如果您的群集前端有负载均衡器（推荐），则群集 URL 将成为负载均衡器的路径。群集 URL 与 DC/OS Web 界面的路径相同，可从浏览器栏复制。或者，您可以登录到 DC/OS CLI 并键入 `dcos config show core.dcos_url` 以获取群集 URL。
+ 如果您的集群前端有负载均衡器（推荐），则集群 URL 将成为负载均衡器的路径。集群 URL 与 DC/OS Web 界面的路径相同，可从浏览器栏复制。或者，您可以登录到 DC/OS CLI 并键入 `dcos config show core.dcos_url` 以获取集群 URL。
 
-1. 也将您的群集 URL 粘贴到 **Authorized redirect URIs** 字段。
+1. 也将您的集群 URL 粘贴到 **Authorized redirect URIs** 字段。
 
-1. 将 `/acs/api/v1/auth/oidc/callback` 粘贴到  **Authorized redirect URIs** 字段中您群集 URL 的末尾处。示例：`https://jp-ybwutd-elasticl-1r2iui8i0z9b7-1590150926.us-west-2.elb.amazonaws.com/acs/api/v1/auth/oidc/callback`
+1. 将 `/acs/api/v1/auth/oidc/callback` 粘贴到  **Authorized redirect URIs** 字段中您集群 URL 的末尾处。示例：`https://jp-ybwutd-elasticl-1r2iui8i0z9b7-1590150926.us-west-2.elb.amazonaws.com/acs/api/v1/auth/oidc/callback`
 
 1. 单击 **Create**。
 
@@ -64,13 +64,13 @@ enterprise: true
 
 1. 将以下内容粘贴到 **Issuer** 字段：`https://accounts.google.com`。
 
-1. 将您的群集 URL 粘贴到 **Base URI** 字段。有关获取此值的更多信息，请参阅前一部分。
+1. 将您的集群 URL 粘贴到 **Base URI** 字段。有关获取此值的更多信息，请参阅前一部分。
 
 1. 将客户端 ID 值从 Google 粘贴到 **Client ID** 字段。
 
 1. 将客户端密钥从 Google 粘贴到 **Client Secret** 字段。
 
- ![Google IdP 配置](/1.11/img/oidc-google.png)
+ ![Google IdP 配置](/cn/1.11/img/oidc-google.png)
 
  图 1. Google IdP 配置
 
@@ -110,11 +110,11 @@ enterprise: true
 
 1. 您应该看到所列的新用户。
 
-1. 为此用户分配适当的[权限](/1.11/security/ent/perms-reference/)。
+1. 为此用户分配适当的[权限](/cn/1.11/security/ent/perms-reference/)。
 
 ### <a name="using-cli"></a>使用 DC/OS CLI
 
-**先决条件：**[已安装 DC/OS CLI](/1.11/cli/install/)。
+**先决条件：**[已安装 DC/OS CLI](/cn/1.11/cli/install/)。
 
 1. 使用以下命令以新用户身份登录。
 
@@ -134,7 +134,7 @@ enterprise: true
 
 1. 您应该看到类似以下内容的消息。
 
- ![CLI IdP 认证令牌](/1.11/img/cli-auth-token.png)
+ ![CLI IdP 认证令牌](/cn/1.11/img/cli-auth-token.png)
 
  图 2. CLI IdP 认证令牌
 

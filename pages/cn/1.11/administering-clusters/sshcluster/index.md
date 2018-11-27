@@ -3,23 +3,23 @@ layout: layout.pug
 navigationTitle: SSH 至节点
 title: SSH 至节点
 menuWeight: 0
-excerpt: 从外部网络设置到您的 DC/OS 群集的 SSH 连接。
+excerpt: 从外部网络设置到您的 DC/OS 集群的 SSH 连接。
 
 enterprise: false
 ---
 
 <!-- The source repo for this topic is https://github.com/dcos/dcos-docs -->
 
-如果您与群集位于同一网络或通过使用 VPN 连接，您可以使用 `dcos node ssh` 命令。有关详细信息，请参阅 CLI 参考的 [dcos 节点部分][1]。
+如果您与集群位于同一网络或通过使用 VPN 连接，您可以使用 `dcos node ssh` 命令。有关详细信息，请参阅 CLI 参考的 [dcos 节点部分][1]。
 
-* [在 Unix/Linux 上 SSH 至 DC/OS 群集（macOS、Ubuntu 等）][2]
-* [在 Windows 上 SSH 至 DC/OS 群集][3]
+* [在 Unix/Linux 上 SSH 至 DC/OS 集群（macOS、Ubuntu 等）][2]
+* [在 Windows 上 SSH 至 DC/OS 集群][3]
 
 **要求：**
 
-* 可用于通过 SSH 认证群集节点的未加密 SSH 密钥。不支持加密的 SSH 密钥。
+* 可用于通过 SSH 认证集群节点的未加密 SSH 密钥。不支持加密的 SSH 密钥。
 
-### <a name="unix"></a>在 Unix/Linux 上 SSH 至 DC/OS 群集（macOS、Ubuntu 等）
+### <a name="unix"></a>在 Unix/Linux 上 SSH 至 DC/OS 集群（macOS、Ubuntu 等）
 **注意：** Mesosphere 不支持 Ubuntu 作为 DC/OS 的操作系统，即使使用 Microsoft Azure 也是如此。
 
 1. 使用 `chmod` 命令更改 `.pem` 文件权限为所有者读/写权限。
@@ -34,7 +34,7 @@ enterprise: false
     chmod 600 <private-key>.pem
     ```
 
-2. SSH 至群集。
+2. SSH 至集群。
 
  1. 从您的终端，将您的新配置添加到 `.pem` 文件，其中 `<private-key>` is your `.pem` 文件。
 
@@ -51,7 +51,7 @@ enterprise: false
             dcos node ssh --master-proxy --leader
             ```
 
- **提示：** CorEos 默认用户是`core` 。如果您正在使用 CenTos，输入：
+ **提示：** CoreOS 默认用户是`core` 。如果您正在使用 CentOS，输入：
 
             ```bash
             dcos node ssh --master-proxy --leader --user=centos
@@ -65,19 +65,19 @@ enterprise: false
             dcos node ssh --master-proxy --mesos-id=<mesos-id>
             ```
 
- 要查找代理 ID，选择 DC/OS [Web 界面](/1.11/gui/) 中的 **节点** 选项卡并单击 **详细信息**。
+ 要查找代理 ID，选择 DC/OS [Web 界面](/cn/1.11/gui/) 中的 **节点** 选项卡并单击 **详细信息**。
 
- ![Web 界面节点 ID](/1.11/img/ssh-node-id.png)
+ ![Web 界面节点 ID](/cn/1.11/img/ssh-node-id.png)
 
  图 1. Web 界面节点 ID 屏幕
 
 
-### <a name="windows"></a> 在 Windows 上 SSH 至 DC/OS 群集
+### <a name="windows"></a> 在 Windows 上 SSH 至 DC/OS 集群
 
 **要求：**
 
 * PuTTY SSH 客户端或同等工具（这些说明假设您正在使用 PuTTY，但几乎所有 SSH 客户端都可以使用。）
-* PuTTYgen RSA 和 DSA 密钥生成实用工具
+* PuTTYgen RSA 和 DSA 密钥生成工具
 * Pageant SSH 身份认证代理
 
 要安装这些程序，从官方 PuTTY 下载页面下载 Windows 安装程序 <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">。</a>
@@ -88,13 +88,13 @@ enterprise: false
 
  2. 选择 **SSH-2 RSA** 作为密钥类型，单击 **保存私钥**，然后选择名称和位置以保存新的 .ppk 密钥。
 
- ![Windows](/1.11/img/windowsputtykey.png)
+ ![Windows](/cn/1.11/img/windowsputtykey.png)
 
  图 2. Windows PuTTY 密钥
 
  3. 关闭 PuTTYgen。
 
-2. SSH 至群集。
+2. SSH 至集群。
 
  * **要 SSH 至管理节点：**
 
@@ -102,19 +102,19 @@ enterprise: false
 
  2. 打开 PuTTY 并在 **主机名（或 IP 地址）** 字段中输入管理节点 IP 地址。
 
- ![Putty 配置](/1.11/img/windowsputtybasic.png)
+ ![Putty 配置](/cn/1.11/img/windowsputtybasic.png)
 
  图 3. PuTTY 配置
 
  3. 在 PuTTY 窗口左侧的 **类别** 窗格中，选择 **连接 > SSH > Auth**，单击 **浏览**，查找并选择您的 `.ppk` 文件，然后单击 **打开**。
 
- ![Putty SSH 选项](/1.11/img/windowsputtysshopt.png)
+ ![Putty SSH 选项](/cn/1.11/img/windowsputtysshopt.png)
 
  图 4. PuTty SSH 选项
 
- 4. 如果您正在运行 CorEos，则以“core”用户登录。CenTos 上的默认用户是“centos”。
+ 4. 如果您正在运行 CoreOS，则以“core”用户登录。CentOS 上的默认用户是“centos”。
 
- ![Windows 登录](/1.11/img/windowscore.png)
+ ![Windows 登录](/cn/1.11/img/windowscore.png)
 
  图 5. Windows 登录
 
@@ -130,7 +130,7 @@ enterprise: false
 
  2. 单击 **浏览** 按钮并找到您之前使用 PuTTYgen 创建的 `.ppk` 文件。
 
- ![Windows 转发](/1.11/img/windowsforwarding.png)
+ ![Windows 转发](/cn/1.11/img/windowsforwarding.png)
 
  图 6. Windows 转发
 
@@ -142,7 +142,7 @@ enterprise: false
 
  3. 找到您使用 PuTTYgen 创建的 `.ppk` 文件，然后单击 **打开** ，将您的密钥添加到 Pageant 中。
 
- ![Windows Pageant](/1.11/img/windowspageant.png)
+ ![Windows Pageant](/cn/1.11/img/windowspageant.png)
 
  图 7. Windows Pageant
 
@@ -151,13 +151,13 @@ enterprise: false
 
  3. SSH 至管理节点。
 
- 1. 从 DC/OS Web 界面，复制管理节点的 IP 地址。IP 地址显示在您的群集名称下方。
+ 1. 从 DC/OS Web 界面，复制管理节点的 IP 地址。IP 地址显示在您的集群名称下方。
 
  2. 在 PuTTY 窗口左侧的 **类别** 窗格中，选择 **会话**，在 **主机名（或 IP 地址）** 字段中输入管理节点 IP 地址。
 
- 4. 如果您正在运行 CorEos，则以“core”用户登录。CenTos 上的默认用户是“centos”。
+ 4. 如果您正在运行 CoreOS，则以“core”用户登录。CentOS 上的默认用户是“centos”。
 
- ![Windows 登录](/1.11/img/windowscore.png)
+ ![Windows 登录](/cn/1.11/img/windowscore.png)
 
  图 8. Windows 登录
 

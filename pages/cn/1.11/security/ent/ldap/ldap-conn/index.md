@@ -14,7 +14,7 @@ enterprise: true
 
 1. 单击 **Add Directory**。
 
- ![添加目录对话框](/1.11/img/ldap-add-dir-conn.png)
+ ![添加目录对话框](/cn/1.11/img/ldap-add-dir-conn.png)
 
  图 1. 添加目录对话框
 
@@ -26,9 +26,9 @@ enterprise: true
 
  * 选择 **Use SSL/TLS for all connections** 复选框以使用 [安全 LDAP (LDAPS)](http://social.technet.microsoft.com/wiki/contents/articles/2980.ldap-over-ssl-ldaps-certificate.aspx)。
 
- * 如果**尝试 StartTLS，如果未能**尝试通过 [StartTLS](https://tools.ietf.org/html/rfc2830) 将连接升级到 TLS，则中止，如果升级到 TLS 失败，则中止连接。
+ * 选择 **尝试 StartTLS，如果未能**尝试通过 [StartTLS](https://tools.ietf.org/html/rfc2830) 将连接升级到 TLS，则中止，如果升级到 TLS 失败，则中止连接。
 
- * 如果**尝试 StartTLS，如果未能**尝试通过 [StartTLS](https://tools.ietf.org/html/rfc2830) 将连接升级到 TLS，则继续不加密，如果升级到 TLS 失败，则继续不加密连接。
+ * 选择**尝试 StartTLS，如果未能**尝试通过 [StartTLS](https://tools.ietf.org/html/rfc2830) 将连接升级到 TLS，则继续不加密，如果升级到 TLS 失败，则继续不加密连接。
 
  **注意：**我们建议**对所有连接使用 SSL/TLS**，否则 **尝试 StartTLS，如果无法**确保 SSL/TLS 或 StartTLS 加密，则中止；否则密码将以明文形式发送。
 
@@ -43,6 +43,6 @@ enterprise: true
     -----END CERTIFICATE-----
     ```
 
-1. 要确保 DC/OS 群集不接受来自指定 LDAP 目录服务器以外的其他方的连接，请将 LDAP 目录服务器的根 CA 证书和任何中间证书粘贴到 **CA certificate chain (Optional)** 字段中。我们强烈建议您完成此步骤，以便与 LDAP 目录服务器建立安全通信信道。
+1. 要确保 DC/OS 集群不接受来自指定 LDAP 目录服务器以外的其他方的连接，请将 LDAP 目录服务器的根 CA 证书和任何中间证书粘贴到 **CA certificate chain (Optional)** 字段中。我们强烈建议您完成此步骤，以便与 LDAP 目录服务器建立安全通信信道。
 
 1. 指定身份认证方法和参数，如[身份认证部分]中所述(/1.11/security/ent/ldap/ldap-auth/)。

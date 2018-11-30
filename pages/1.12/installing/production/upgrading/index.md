@@ -42,7 +42,7 @@ The following matrix table lists the supported upgrade paths for DC/OS 1.11.
 
 <table style="border-collapse: collapse;" Border = "1" Cellpadding = "5" Cellspacing = "5">
    <tr>
-    <th Rowspan = "20" Align = "center"><strong>Upgrade<br>From</strong></th>
+    <th Rowspan = "21" Align = "center"><strong>Upgrade<br>From</strong></th>
    <tr>
     <th></th>
     <th Colspan = "1" Align = "center"><strong>Upgrade To</strong></th>
@@ -84,6 +84,10 @@ The following matrix table lists the supported upgrade paths for DC/OS 1.11.
    </tr>
    <tr>
     <th>1.10.8</th>
+    <td Align = "center">⚫</td>
+   </tr>
+      <tr>
+    <th>1.10.9</th>
     <td Align = "center">⚫</td>
    </tr>
    <tr>
